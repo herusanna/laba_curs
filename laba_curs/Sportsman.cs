@@ -127,6 +127,7 @@ namespace laba_curs
             bw.Write(sportsmen.country);
             setType();         
                 bw.Write(sportsmen.type);
+            bw.Write(sportsmen.place);
             //bw.Write(sportsmen.place);
         }
         public Sportsman Read(BinaryReader br)

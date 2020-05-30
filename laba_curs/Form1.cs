@@ -149,7 +149,7 @@ namespace laba_curs
             Password input = new Password();
             if (input.ShowDialog() == DialogResult.OK)
                 password = input.N;
-
+        
             string newpassword = br.ReadString();
             if (String.Equals(password, newpassword))
             {
@@ -273,6 +273,7 @@ namespace laba_curs
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             k = -1;
             int j = 0;
             AddObj form = new AddObj();
