@@ -49,7 +49,7 @@ namespace laba_curs
            
         }
        
-        public void setF()
+        public string setF()
         {
             //Random r = new Random(DateTime.Now.ToString().GetHashCode());
            
@@ -59,7 +59,7 @@ namespace laba_curs
                 sportsmen.F = f[index];
                 f.RemoveAt(index);
             }
-
+            return sportsmen.F;
         }
         public string setCountry()
         {
@@ -98,20 +98,23 @@ namespace laba_curs
             info += $"{sportsmen.O}\n";
             return info;
         }
+        public void setInfo()
+        {
+            setF();
+            setCountry();
+            setType();
+            setPlace();
+        }
         public string showInfo()
         {
             string info = "";
-            setF();
-            info += $"{sportsmen.F}   ";
-            info += $"{sportsmen.I}   ";
+            info += $"{sportsmen.F}  ";
+            info += $"{sportsmen.I}  ";
             info += $"{sportsmen.O}\n";
-            setCountry();
-            info += $"{sportsmen.country}\n";
-            setType();
-            info += $"{sportsmen.type}\n ";
-           
-            info += $"{setPlace()}\n ";
-            info += "----------------------------------\n\n";
+            info += $"{sportsmen.country}\n";            
+            info += $"{sportsmen.type}\n";
+            info += $"{sportsmen.place} место\n ";
+            info += "---------------------------\n\n";
             return info;
         }
         public void Write(BinaryWriter bw)

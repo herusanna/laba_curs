@@ -46,12 +46,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.infoButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inputN
             // 
-            this.inputN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.inputN.Location = new System.Drawing.Point(122, 45);
+            this.inputN.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputN.Location = new System.Drawing.Point(143, 3);
             this.inputN.Name = "inputN";
             this.inputN.Size = new System.Drawing.Size(60, 29);
             this.inputN.TabIndex = 5;
@@ -59,19 +62,19 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(12, 51);
+            this.label4.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(9, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 20);
+            this.label4.Size = new System.Drawing.Size(118, 18);
             this.label4.TabIndex = 10;
             this.label4.Text = "Количество:";
             // 
             // genButton
             // 
-            this.genButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.genButton.Location = new System.Drawing.Point(199, 44);
+            this.genButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genButton.Location = new System.Drawing.Point(225, 0);
             this.genButton.Name = "genButton";
-            this.genButton.Size = new System.Drawing.Size(140, 35);
+            this.genButton.Size = new System.Drawing.Size(151, 35);
             this.genButton.TabIndex = 12;
             this.genButton.Text = "Сгенерировать";
             this.genButton.UseVisualStyleBackColor = true;
@@ -79,51 +82,51 @@
             // 
             // infoTextBox
             // 
-            this.infoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.infoTextBox.Location = new System.Drawing.Point(345, 169);
+            this.infoTextBox.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.infoTextBox.Location = new System.Drawing.Point(382, 157);
             this.infoTextBox.Name = "infoTextBox";
-            this.infoTextBox.Size = new System.Drawing.Size(417, 172);
+            this.infoTextBox.Size = new System.Drawing.Size(418, 184);
             this.infoTextBox.TabIndex = 14;
             this.infoTextBox.Text = "";
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.nameTextBox.Location = new System.Drawing.Point(12, 85);
+            this.nameTextBox.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameTextBox.Location = new System.Drawing.Point(12, 41);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(327, 256);
+            this.nameTextBox.Size = new System.Drawing.Size(364, 300);
             this.nameTextBox.TabIndex = 19;
             this.nameTextBox.Text = "";
             // 
             // countryListBox
             // 
-            this.countryListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.countryListBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.countryListBox.FormattingEnabled = true;
-            this.countryListBox.ItemHeight = 20;
-            this.countryListBox.Location = new System.Drawing.Point(345, 39);
+            this.countryListBox.ItemHeight = 18;
+            this.countryListBox.Location = new System.Drawing.Point(382, 41);
             this.countryListBox.Name = "countryListBox";
-            this.countryListBox.Size = new System.Drawing.Size(135, 124);
+            this.countryListBox.Size = new System.Drawing.Size(117, 112);
             this.countryListBox.TabIndex = 20;
             // 
             // typeListBox
             // 
-            this.typeListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.typeListBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.typeListBox.FormattingEnabled = true;
-            this.typeListBox.ItemHeight = 20;
-            this.typeListBox.Location = new System.Drawing.Point(486, 39);
+            this.typeListBox.ItemHeight = 18;
+            this.typeListBox.Location = new System.Drawing.Point(505, 41);
             this.typeListBox.Name = "typeListBox";
-            this.typeListBox.Size = new System.Drawing.Size(135, 124);
+            this.typeListBox.Size = new System.Drawing.Size(160, 112);
             this.typeListBox.TabIndex = 21;
             this.typeListBox.SelectedIndexChanged += new System.EventHandler(this.typeListBox_SelectedIndexChanged);
             // 
             // nameListBox
             // 
-            this.nameListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nameListBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameListBox.FormattingEnabled = true;
-            this.nameListBox.ItemHeight = 20;
-            this.nameListBox.Location = new System.Drawing.Point(627, 39);
+            this.nameListBox.ItemHeight = 18;
+            this.nameListBox.Location = new System.Drawing.Point(671, 41);
             this.nameListBox.Name = "nameListBox";
-            this.nameListBox.Size = new System.Drawing.Size(135, 124);
+            this.nameListBox.Size = new System.Drawing.Size(129, 112);
             this.nameListBox.TabIndex = 22;
             this.nameListBox.SelectedIndexChanged += new System.EventHandler(this.nameListBox_SelectedIndexChanged);
             // 
@@ -133,10 +136,10 @@
             // 
             // openButton
             // 
-            this.openButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.openButton.Location = new System.Drawing.Point(618, 347);
+            this.openButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.openButton.Location = new System.Drawing.Point(654, 371);
             this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(72, 35);
+            this.openButton.Size = new System.Drawing.Size(72, 30);
             this.openButton.TabIndex = 23;
             this.openButton.Text = "Open";
             this.openButton.UseVisualStyleBackColor = true;
@@ -144,10 +147,10 @@
             // 
             // saveButton
             // 
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.saveButton.Location = new System.Drawing.Point(540, 347);
+            this.saveButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveButton.Location = new System.Drawing.Point(576, 371);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(72, 35);
+            this.saveButton.Size = new System.Drawing.Size(72, 30);
             this.saveButton.TabIndex = 24;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -155,10 +158,10 @@
             // 
             // passButton
             // 
-            this.passButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.passButton.Location = new System.Drawing.Point(73, 347);
+            this.passButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passButton.Location = new System.Drawing.Point(12, 347);
             this.passButton.Name = "passButton";
-            this.passButton.Size = new System.Drawing.Size(168, 35);
+            this.passButton.Size = new System.Drawing.Size(119, 54);
             this.passButton.TabIndex = 25;
             this.passButton.Text = "Добавить пароль";
             this.passButton.UseVisualStyleBackColor = true;
@@ -166,10 +169,10 @@
             // 
             // exitButton
             // 
-            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.exitButton.Location = new System.Drawing.Point(696, 347);
+            this.exitButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exitButton.Location = new System.Drawing.Point(728, 371);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(72, 35);
+            this.exitButton.Size = new System.Drawing.Size(72, 30);
             this.exitButton.TabIndex = 26;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -178,48 +181,84 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(404, -4);
+            this.label1.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(441, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 17);
+            this.label1.Size = new System.Drawing.Size(144, 16);
             this.label1.TabIndex = 27;
             this.label1.Text = "Просмотр призеров";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(615, 9);
+            this.label2.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(651, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 17);
+            this.label2.Size = new System.Drawing.Size(168, 16);
             this.label2.TabIndex = 28;
             this.label2.Text = "Удаление по фамилии:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(345, 16);
+            this.label3.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(379, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 17);
+            this.label3.Size = new System.Drawing.Size(88, 16);
             this.label3.TabIndex = 29;
             this.label3.Text = "по стране:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(484, 16);
+            this.label5.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(520, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 17);
+            this.label5.Size = new System.Drawing.Size(128, 16);
             this.label5.TabIndex = 30;
             this.label5.Text = "по виду спорта:";
+            // 
+            // infoButton
+            // 
+            this.infoButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.infoButton.Location = new System.Drawing.Point(421, 347);
+            this.infoButton.Name = "infoButton";
+            this.infoButton.Size = new System.Drawing.Size(130, 54);
+            this.infoButton.TabIndex = 31;
+            this.infoButton.Text = "Справка о странах";
+            this.infoButton.UseVisualStyleBackColor = true;
+            this.infoButton.Click += new System.EventHandler(this.infoButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(137, 347);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 54);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Добавить спортсмена";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(262, 347);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 54);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Редактировать";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 402);
+            this.ClientSize = new System.Drawing.Size(812, 411);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.infoButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -263,6 +302,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button infoButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

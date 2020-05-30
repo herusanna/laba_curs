@@ -15,25 +15,37 @@ namespace laba_curs
     {
         public List<Sportsman> sportsmen = new List<Sportsman>();
         int n;
+        public int k;
         string password;
-        public int quantity;
+        List<string> countries = new List<string> { "Украина", "США", "Германия", "Англия", "Франция", "Испания", "Китай" };
+        List<string> names = new List<string> { "Джексон", "Ковальски", "Поттер", "Романенко", "Смит", "Старк", "Уайт" };
+
         public int N { get => n; set => n = value; }
         int seed = 0;
         public Form1()
         {
             InitializeComponent();
-            string[] countries = { "Украина", "США", "Германия", "Англия", "Франция", "Испания", "Китай" };
-            countryListBox.Items.AddRange(countries);
+
+        }
+        public void UpdateListBox()
+        {
+            countryListBox.Items.Clear();
+            for (int i = 0; i < countries.Count; i++)
+            {
+                countryListBox.Items.Add(countries[i]);
+            }
             countryListBox.SelectedIndexChanged += countryListBox_SelectedIndexChanged;
+            typeListBox.Items.Clear();
             string[] sports = { "Горнолыжный спорт", "Лыжные гонки", "Прыжки с трамплина", "Лыжное двоеборье", "Фристайл", "Сноуборд", "Биатлон", "Фигурное катание", "Конькобежный спорт", "Шорт-трек", "Бобслей", "Санный спорт", "Кёрлинг" };
             typeListBox.Items.AddRange(sports);
             typeListBox.SelectedIndexChanged += typeListBox_SelectedIndexChanged;
-            string[] names= { "Джексон", "Ковальски", "Поттер", "Романенко", "Смит",  "Старк", "Уайт"};
-            nameListBox.Items.AddRange(names);
+            nameListBox.Items.Clear();
+            for (int i = 0; i < names.Count; i++)
+            {
+                nameListBox.Items.Add(names[i]);
+            }
             nameListBox.SelectedIndexChanged += nameListBox_SelectedIndexChanged;
-
         }
-
         private void saveButton_Click(object sender, EventArgs e)
         {
             try
@@ -44,16 +56,18 @@ namespace laba_curs
             {
                 MessageBox.Show(exc.Message);
             }
-           
-           sportsmen = new List<Sportsman>();
+
+            sportsmen = new List<Sportsman>();
             nameTextBox.Clear();
             for (int i = 0; i < n; i++)
             {
                 sportsmen.Add(new Sportsman(seed++));
-                    nameTextBox.Text += $"[{i + 1}] { sportsmen[i].showInfo()}";                 
+                sportsmen[i].setInfo();                
+                nameTextBox.Text += $"[{i + 1}] { sportsmen[i].showInfo()}";
             }
+            UpdateListBox();
         }
- 
+
         private void countryListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (n != 0)
@@ -61,14 +75,18 @@ namespace laba_curs
                 infoTextBox.Clear();
                 string selectedCountry = countryListBox.SelectedItem.ToString();
                 MessageBox.Show("Вы выбрали " + selectedCountry);
-               // int index = nameTextBox.Find(selectedCountry);
-                   // index = nameTextBox.GetLineFromCharIndex(index);
-                for (int index = 0; index < nameTextBox.Lines.Length; index++)
-                {                
-                    if (nameTextBox.Lines[index].ToString()==selectedCountry)
+                for (int index = 0; index < sportsmen.Count; index++)
+                {
+                    if (sportsmen[index].sportsmen.country == selectedCountry)
                     {
-                        infoTextBox.Text += $"{nameTextBox.Lines[index-1].ToString()}\n";
-                    }                   
+                        infoTextBox.Text += $"[{index + 1}] {sportsmen[index].showInfo()}";
+
+                        //infoTextBox.Text += $"{sportsmen[index].sportsmen.ToString()}\n";
+                    }
+                }
+                if (infoTextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Данная страна не участвовала в Олимпиаде");
                 }
             }
             else
@@ -100,26 +118,23 @@ namespace laba_curs
         {
             if (n != 0)
             {
-                infoTextBox.Clear();
+                nameTextBox.Clear();
 
                 string selectedName = nameListBox.SelectedItem.ToString();
                 MessageBox.Show("Вы выбрали " + selectedName);
-                for (int index = 0; index < nameTextBox.Lines.Length; index++)
+
+                for (int index = 0; index < sportsmen.Count; index++)
                 {
-                    if (nameTextBox.Lines[index].ToString() == selectedName)
+                    if (sportsmen[index].sportsmen.F.Equals(selectedName))
                     {
                         sportsmen.RemoveAt(index);
-                      
                     }
                 }
-                for (int i = 0; i < nameTextBox.Lines.Length; i++)
-                {
-                    nameTextBox.Text += $"[{i + 1}] { sportsmen[i].showInfo()}";
-                }
+                ShowAll();
             }
             else
-                MessageBox.Show("Для начала введите количество спортсменов!");        
-    }
+                MessageBox.Show("Для начала введите количество спортсменов!");
+        }
 
         private void openButton_Click(object sender, EventArgs e)
         {
@@ -168,12 +183,12 @@ namespace laba_curs
             {
                 sportsmen[i].Write(bw);
             }
-           
+
         }
 
         private void saveButton_Click_1(object sender, EventArgs e)
         {
-            if(n != 0)
+            if (n != 0)
             {
                 if (password == null)
                 {
@@ -203,17 +218,15 @@ namespace laba_curs
         }
         public void ShowAll()
         {
-            infoTextBox.Text = "";
-           
-            for (int i = 0; i < N; i++)
+            nameTextBox.Text = "";
+
+            for (int i = 0; i < sportsmen.Count; i++)
             {
-                infoTextBox.Text += "" + (i + 1) + "\n";
-                infoTextBox.Text += sportsmen[i].showInfo();
-                infoTextBox.Text += "******************************\n";
+                nameTextBox.Text += $"[{i + 1}] {sportsmen[i].showInfo()}\n";
             }
         }
 
-    
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -232,10 +245,129 @@ namespace laba_curs
             {
                 password = input.N;
             }
-            if(password!=null)
-            MessageBox.Show("Пароль добавлен");
+            if (password != null)
+                MessageBox.Show("Пароль добавлен");
         }
 
+        private void infoButton_Click(object sender, EventArgs e)
+        {
+            infoTextBox.Clear();
+            for (int i = 0; i < countries.Count; i++)
+            {
+                int first = 0;
+                int second = 0;
+                int third = 0;
+                for (int j = 0; j < sportsmen.Count; j++)
+                {
+                    if (sportsmen[j].sportsmen.country.Equals(countries[i]))
+                    {
+                        if (sportsmen[j].sportsmen.place == 1) first++;
+                        if (sportsmen[j].sportsmen.place == 2) second++;
+                        if (sportsmen[j].sportsmen.place == 3) third++;
+                    }
+                }
+                infoTextBox.Text += $"{countries[i]}\nзолото:{first}\nсеребро:{second}\nбронза:{third}\n\n";
 
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            k = -1;
+            int j = 0;
+            AddObj form = new AddObj();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                sportsmen.Add(form.sportsman);
+                for (int i = 0; i < countries.Count; i++)
+                {
+                    if (countries[i] == form.sportsman.sportsmen.country)
+                    {
+                        j++;
+                    }
+                }
+                if (j == 0)
+                {
+                    countries.Add(form.sportsman.sportsmen.country);
+                }
+                j = 0;
+                for (int i = 0; i < names.Count; i++)
+                {
+                    if (names[i] == form.sportsman.sportsmen.F)
+                    {
+                        j++;
+
+                    }
+                }
+                if (j == 0)
+                {
+                    names.Add(form.sportsman.sportsmen.F);
+                }
+            }
+            UpdateListBox();
+            ShowAll();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bool result = false;
+            int j = 0;
+            k = 0;
+            if (sportsmen.Count == 0)
+            {
+                MessageBox.Show("База пустая");
+                return;
+            }
+            EditByNum form = new EditByNum();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                for (int i = 0; i < sportsmen.Count; i++)
+                {
+                    if (i + 1 == form.number)
+                    {
+                        result = true;
+                        k = i;
+                        AddObj f = new AddObj();
+                        if (f.ShowDialog() == DialogResult.OK)
+                        {
+                            sportsmen[i] = f.sportsman;
+                            for (int l = 0; l < countries.Count; l++)
+                            {
+                                if (countries[l] == f.sportsman.sportsmen.country)
+                                {
+                                    j++;
+                                }
+                            }
+                            if (j == 0)
+                            {
+                                countries.Add(f.sportsman.sportsmen.country);
+                            }
+                            j = 0;
+                            for (int l = 0; l < names.Count; l++)
+                            {
+                                if (names[l] == f.sportsman.sportsmen.F)
+                                {
+                                    j++;
+                                }
+                            }
+                            if (j == 0)
+                            {
+                                names.Add(f.sportsman.sportsmen.F);
+                            }
+                        }
+                    }
+                    sportsmen[i].showInfo();
+                }
+
+                if (result == false)
+                {
+                    MessageBox.Show("Совпадений нет");
+                }
+
+
+            }
+            UpdateListBox();
+            ShowAll();
+        }
     }
 }
