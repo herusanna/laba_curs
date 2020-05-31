@@ -192,7 +192,7 @@ namespace laba_curs
             {
                 if (password == null)
                 {
-                    MessageBox.Show("Добавьте пароль");
+                    MessageBox.Show("Добавьте пароль!");
                     return;
                 }
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
@@ -206,7 +206,6 @@ namespace laba_curs
                 string filename = saveFileDialog1.FileName;
                 //файловый поток
                 FileStream fs = new FileStream(filename, FileMode.OpenOrCreate, FileAccess.Write);
-                //бинарный записователь 
                 BinaryWriter bw = new BinaryWriter(fs, Encoding.UTF8);
                 bw.Write(password);
                 Write(bw);

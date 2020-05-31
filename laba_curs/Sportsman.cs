@@ -9,7 +9,6 @@ namespace laba_curs
 {
     public struct sportsman
     {
-        public int number;
         public string country;
         public string type;
         public int place;
@@ -141,6 +140,7 @@ namespace laba_curs
             temp.sportsmen.country = br.ReadString();
             setType();
             temp.sportsmen.type = br.ReadString();
+            temp.sportsmen.place = br.Read();
             return temp;
         }
     }

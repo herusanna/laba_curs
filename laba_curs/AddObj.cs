@@ -12,7 +12,6 @@ namespace laba_curs
 {
     public partial class AddObj : Form
     {
-        //public List<Country> Countries { get; set; }
         List<string> sports;
         public Sportsman sportsman;
         private Form1 MyForm = Application.OpenForms[0] as Form1;
